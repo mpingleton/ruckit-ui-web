@@ -16,7 +16,7 @@ function AppRouter() {
       <Routes>
         <Route path="/" element={<BlankLayout><Main /></BlankLayout>} />
         <Route path="/login" element={<BlankLayout><Login /></BlankLayout>} />
-        <Route path="/calls" element={<MainLayout>Hi</MainLayout>} />
+        <Route path="/calls" element={<MainLayout></MainLayout>} />
       </Routes>
     </BrowserRouter>
   );
