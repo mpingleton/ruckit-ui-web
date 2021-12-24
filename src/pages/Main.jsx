@@ -1,8 +1,7 @@
 import React from 'react';
-import {
-  Stack,
-  Typography,
-} from '@mui/material';
+import { Stack } from '@mui/material';
+
+import ConsentBanner from '../components/ConsentBanner';
 
 function Main() {
   return (
@@ -12,7 +11,7 @@ function Main() {
       justifyContent="center"
       sx={{ width: '100%', height: '100%' }}
     >
-      <Typography variant="h6">Main Page</Typography>
+      <ConsentBanner />
     </Stack>
   );
 }
