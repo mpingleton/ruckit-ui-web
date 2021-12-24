@@ -30,7 +30,7 @@ function LoginForm(props) {
             />
             <TextField
               fullWidth
-              label="Password"
+              label="Passphrase"
               value=""
               error={false}
               onChange={(event) => {}}
@@ -43,13 +43,20 @@ function LoginForm(props) {
             >
               <Button
                 variant="contained"
-                onClick={() => {}}
+                onClick={() => {
+                  props.onCancel();
+                }}
               >
                 Cancel
               </Button>
               <Button
                 variant="contained"
-                onClick={() => {}}
+                onClick={() => {
+                  props.onSubmitLoginCredentials({
+                    username: '',
+                    passphrase: '',
+                  });
+                }}
               >
                 Login
               </Button>

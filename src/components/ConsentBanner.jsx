@@ -26,7 +26,9 @@ function ConsentBanner(props) {
             <Button
               fullWidth
               variant="contained"
-              onClick={() => {}}
+              onClick={() => {
+                props.onContinue();
+              }}
             >
               Continue
             </Button>
