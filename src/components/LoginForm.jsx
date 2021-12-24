@@ -9,7 +9,18 @@ import {
   Button,
 } from '@mui/material';
 
+const Joi = require('joi');
+
 function LoginForm(props) {
+  const [username, setUsername] = React.useState('');
+  const [passphrase, setPassphrase] = React.useState('');
+
+  const usernameValidation = Joi.string().min(3).max(100).required().validate(username);
+  const passphraseValidation = Joi.string().min(3).max(100).required().validate(passphrase);
+  const errorValidation = (
+    usernameValidation.error ||
+    passphraseValidation.error
+  );
 
   return (
     <Box sx={{ width: 400 }}>
@@ -24,16 +35,14 @@ function LoginForm(props) {
             <TextField
               fullWidth
               label="Username"
-              value=""
-              error={false}
-              onChange={(event) => {}}
+              value={username}
+              onChange={(event) => setUsername(event.target.value)}
             />
             <TextField
               fullWidth
               label="Passphrase"
-              value=""
-              error={false}
-              onChange={(event) => {}}
+              value={passphrase}
+              onChange={(event) => setPassphrase(event.target.value)}
             />
             <Stack
               direction="row"
@@ -51,10 +60,11 @@ function LoginForm(props) {
               </Button>
               <Button
                 variant="contained"
+                disabled={errorValidation}
                 onClick={() => {
                   props.onSubmitLoginCredentials({
-                    username: '',
-                    passphrase: '',
+                    username: username,
+                    passphrase: passphrase,
                   });
                 }}
               >
