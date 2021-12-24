@@ -40,6 +40,7 @@ function LoginForm(props) {
             />
             <TextField
               fullWidth
+              type="password"
               label="Passphrase"
               value={passphrase}
               onChange={(event) => setPassphrase(event.target.value)}
