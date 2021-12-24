@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { useNavigate } from 'react-router';
 import {
   Stack,
   Box,
@@ -9,14 +9,40 @@ import {
   Typography,
 } from '@mui/material';
 
-// import api.
+import { getApiContext, getMe, logout, deleteAccessToken } from '../api';
 
 function MainLayout(props) {
+  const navigate = useNavigate();
+  const [user, setUser] = React.useState({});
+
+  React.useEffect(() => {
+    getMe(getApiContext()).then((data) => setUser(data));
+  }, []);
+
+  function submitLogout() {
+    logout(getApiContext()).then(() => {
+      deleteAccessToken();
+      navigate('/', { replace: true });
+    });
+  }
+
+  if (user.id === undefined) {
+    return (
+      <Stack
+        direction="column"
+        alignItems="center"
+        justifyContent="center"
+        sx={{ width: '100vw', height: '100vh' }}
+      >
+        <Typography>Loading...</Typography>
+      </Stack>
+    );
+  }
 
   return (
     <Stack direction="column" spacing={1} sx={{ width: '100vw', height: '100vh' }}>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="stack">
+        <AppBar position="static">
           <Toolbar spacing={1}>
             <Button
               color="inherit"
@@ -28,11 +54,15 @@ function MainLayout(props) {
               variant="caption"
               sx={{ marginLeft: "auto", marginRight: 1 }}
             >
-              SrA First Name
+              {`
+                ${user.rank}
+                ${user.firstName}
+                ${user.lastName}
+              `}
             </Typography>
             <Button
               color="inherit"
-              onClick={() => {}}
+              onClick={() => submitLogout()}
             >
               Logout
             </Button>
