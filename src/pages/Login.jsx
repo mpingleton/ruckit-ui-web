@@ -2,8 +2,9 @@ import React from 'react';
 import {
   Box,
   Stack,
-  Typography,
 } from '@mui/material';
+
+import LoginForm from '../components/LoginForm';
 
 function Login() {
   return (
@@ -13,7 +14,7 @@ function Login() {
       justifyContent="center"
       sx={{ width: '100%', height: '100%' }}
     >
-      <Typography variant="h6">Login</Typography>
+      <LoginForm />
     </Stack>
   );
 }
