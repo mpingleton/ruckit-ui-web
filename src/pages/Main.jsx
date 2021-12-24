@@ -6,7 +6,12 @@ import {
 
 function Main() {
   return (
-    <Stack>
+    <Stack
+      direction="column"
+      alignItems="center"
+      justifyContent="center"
+      sx={{ width: '100%', height: '100%' }}
+    >
       <Typography variant="h6">Main Page</Typography>
     </Stack>
   );
