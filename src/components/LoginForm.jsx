@@ -53,6 +53,7 @@ function LoginForm(props) {
             >
               <Button
                 variant="contained"
+                color="primary"
                 onClick={() => {
                   props.onCancel();
                 }}
@@ -61,6 +62,7 @@ function LoginForm(props) {
               </Button>
               <Button
                 variant="contained"
+                color="primary"
                 disabled={errorValidation}
                 onClick={() => {
                   props.onSubmitLoginCredentials({

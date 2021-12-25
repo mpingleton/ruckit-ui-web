@@ -21,12 +21,14 @@ function Calls() {
       >
         <Button
           variant="contained"
+          color="primary"
           onClick={() => {}}
         >
           New
         </Button>
         <Button
           variant="contained"
+          color="primary"
           onClick={() => {}}
         >
           Details
