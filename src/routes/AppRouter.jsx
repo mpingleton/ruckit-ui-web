@@ -10,6 +10,7 @@ import MainLayout from '../layouts/MainLayout';
 import Main from '../pages/Main';
 import Login from '../pages/Login';
 import Calls from '../pages/Calls';
+import PlaceCall from '../pages/PlaceCall';
 
 function AppRouter() {
   return (
@@ -17,6 +18,7 @@ function AppRouter() {
       <Routes>
         <Route path="/" element={<BlankLayout><Main /></BlankLayout>} />
         <Route path="/login" element={<BlankLayout><Login /></BlankLayout>} />
+        <Route path='/calls/new' element={<MainLayout title="New Call"><PlaceCall /></MainLayout>} />
         <Route path="/calls" element={<MainLayout title="Calls"><Calls /></MainLayout>} />
       </Routes>
     </BrowserRouter>

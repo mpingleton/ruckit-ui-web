@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 import {
   Stack,
   Button,
@@ -7,6 +8,7 @@ import {
 import CallList from '../components/CallList';
 
 function Calls() {
+  const navigate = useNavigate();
   const [selectedCallId, setSelectedCallId] = React.useState(0);
 
   return (
@@ -23,7 +25,9 @@ function Calls() {
         <Button
           variant="contained"
           color="primary"
-          onClick={() => {}}
+          onClick={() => {
+            navigate('/calls/new');
+          }}
         >
           New
         </Button>
