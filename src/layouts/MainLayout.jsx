@@ -50,6 +50,9 @@ function MainLayout(props) {
             >
               Calls
             </Button>
+            <Typography variant="h6" sx={{ marginLeft: "auto", marginRight: "auto", align: "center" }}>
+              {props.title}
+            </Typography>
             <Typography sx={{ marginLeft: "auto", marginRight: 1 }}>
               {`
                 ${user.rank}
