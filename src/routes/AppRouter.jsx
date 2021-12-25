@@ -9,6 +9,7 @@ import BlankLayout from '../layouts/BlankLayout';
 import MainLayout from '../layouts/MainLayout';
 import Main from '../pages/Main';
 import Login from '../pages/Login';
+import Calls from '../pages/Calls';
 
 function AppRouter() {
   return (
@@ -16,7 +17,7 @@ function AppRouter() {
       <Routes>
         <Route path="/" element={<BlankLayout><Main /></BlankLayout>} />
         <Route path="/login" element={<BlankLayout><Login /></BlankLayout>} />
-        <Route path="/calls" element={<MainLayout></MainLayout>} />
+        <Route path="/calls" element={<MainLayout><Calls /></MainLayout>} />
       </Routes>
     </BrowserRouter>
   );
