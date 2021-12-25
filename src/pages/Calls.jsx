@@ -1,5 +1,10 @@
 import React from 'react';
-import { Stack } from '@mui/material';
+import {
+  Stack,
+  Button,
+} from '@mui/material';
+
+import CallList from '../components/CallList';
 
 function Calls() {
 
@@ -9,6 +14,27 @@ function Calls() {
       alignItems="center"
       sx={{ width: '100%', height: '100%' }}
     >
+      <Stack
+        direction="row"
+        spacing={1}
+        sx={{ width: '100%' }}
+      >
+        <Button
+          variant="contained"
+          onClick={() => {}}
+        >
+          New
+        </Button>
+        <Button
+          variant="contained"
+          onClick={() => {}}
+        >
+          Details
+        </Button>
+      </Stack>
+      <CallList
+        sx={{ width: '100%', height: '100%' }}
+      />
     </Stack>
   );
 }
