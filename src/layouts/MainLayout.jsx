@@ -50,10 +50,7 @@ function MainLayout(props) {
             >
               Calls
             </Button>
-            <Typography
-              variant="caption"
-              sx={{ marginLeft: "auto", marginRight: 1 }}
-            >
+            <Typography sx={{ marginLeft: "auto", marginRight: 1 }}>
               {`
                 ${user.rank}
                 ${user.firstName}
