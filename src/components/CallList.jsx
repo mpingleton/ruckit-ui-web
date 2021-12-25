@@ -36,6 +36,13 @@ function CallList(props) {
         pageSize={5}
         rowsPerPageOptions={[5]}
         disableMultipleSelection
+        onSelectionModelChange={(model, details) => {
+          if (model.length === 1) {
+            props.onSelectionChanged(model[0]);
+          } else {
+            props.onSelectionChanged(0);
+          }
+        }}
       />
     </Box>
   );

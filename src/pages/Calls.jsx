@@ -7,6 +7,7 @@ import {
 import CallList from '../components/CallList';
 
 function Calls() {
+  const [selectedCallId, setSelectedCallId] = React.useState(0);
 
   return (
     <Stack
@@ -29,12 +30,14 @@ function Calls() {
         <Button
           variant="contained"
           color="primary"
+          disabled={selectedCallId <= 0}
           onClick={() => {}}
         >
           Details
         </Button>
       </Stack>
       <CallList
+        onSelectionChanged={(id) => setSelectedCallId(id)}
         sx={{ width: '100%', height: '100%' }}
       />
     </Stack>
