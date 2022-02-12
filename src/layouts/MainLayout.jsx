@@ -46,7 +46,9 @@ function MainLayout(props) {
           <Toolbar spacing={1}>
             <Button
               color="inherit"
-              onClick={() => {}}
+              onClick={() => {
+              	navigate('/calls');
+              }}
             >
               Calls
             </Button>
