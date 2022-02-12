@@ -52,6 +52,14 @@ function MainLayout(props) {
             >
               Calls
             </Button>
+            <Button
+              color="inherit"
+              onClick={() => {
+                navigate('/messages');
+              }}
+            >
+              Messages
+            </Button>
             <Typography variant="h6" sx={{ marginLeft: "auto", marginRight: "auto", align: "center" }}>
               {props.title}
             </Typography>
