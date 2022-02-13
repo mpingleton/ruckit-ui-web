@@ -4,6 +4,8 @@ import {
   Stack,
 } from '@mui/material';
 
+import MessageList from '../components/MessageList';
+
 function Messages() {
 	const navigate = useNavigate();
 
@@ -20,7 +22,9 @@ function Messages() {
       >
       		
       </Stack>
-      		
+      <MessageList
+        sx={{ width: '100%', height: '100%' }}
+      />
 		</Stack>
 	);
 }
