@@ -8,6 +8,7 @@ import MessageList from '../components/MessageList';
 
 function Messages() {
 	const navigate = useNavigate();
+  const [selectedMessageId, setSelectedMessageId] = React.useState(0);
 
 	return (
 		<Stack
@@ -23,6 +24,7 @@ function Messages() {
       		
       </Stack>
       <MessageList
+        onSelectionChanged={(id) => setSelectedMessageId(id)}
         sx={{ width: '100%', height: '100%' }}
       />
 		</Stack>
