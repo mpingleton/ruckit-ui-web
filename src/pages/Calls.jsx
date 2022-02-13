@@ -35,7 +35,9 @@ function Calls() {
           variant="contained"
           color="primary"
           disabled={selectedCallId <= 0}
-          onClick={() => {}}
+          onClick={() => {
+            navigate('/calls/id/' + selectedCallId);
+          }}
         >
           Details
         </Button>
