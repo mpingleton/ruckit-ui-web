@@ -27,7 +27,19 @@ const getCalls = async (apiContext, status) => {
   return res;
 };
 
+const getCallById = async (apiContext, callId) => {
+  const res = await fetch(apiContext.apiAddr + '/api/call/id/' + callId, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${apiContext.accessToken}`,
+    },
+  }).then((data) => data.json());
+
+  return res;
+};
+
 module.exports = {
   placeCall,
   getCalls,
+  getCallById,
 };
