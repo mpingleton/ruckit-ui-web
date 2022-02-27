@@ -23,6 +23,18 @@ function CallDetailsCard(props) {
     );
   }
 
+  function statusString(status) {
+    if (status === 0) {
+      return "New";
+    } else if (status === 1) {
+      return "Assigned";
+    } else if (status === 2) {
+      return "In-Progress";
+    } else if (status === 3) {
+      return "Completed";
+    }
+  }
+
   return (
     <Card sx={props.sx}>
       <CardContent>
@@ -30,6 +42,14 @@ function CallDetailsCard(props) {
           direction="column"
           spacing={1}
         >
+          <Stack
+            direction="row"
+            spacing={1}
+            justifyContent="space-between"
+          >
+            <Typography>Status:</Typography>
+            <Typography>{statusString(props.callData.status)}</Typography>
+          </Stack>
           <Stack
             direction="row"
             spacing={1}
