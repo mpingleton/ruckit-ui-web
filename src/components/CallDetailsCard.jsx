@@ -35,14 +35,6 @@ function CallDetailsCard(props) {
             spacing={1}
             justifyContent="space-between"
           >
-            <Typography>Rider:</Typography>
-            <Typography>{props.callData.riderId}</Typography>
-          </Stack>
-          <Stack
-            direction="row"
-            spacing={1}
-            justifyContent="space-between"
-          >
             <Typography>Pickup Location:</Typography>
             <Typography>{props.callData.pickupLocation}</Typography>
           </Stack>
@@ -53,6 +45,26 @@ function CallDetailsCard(props) {
           >
             <Typography>Dropoff Location:</Typography>
             <Typography>{props.callData.dropoffLocation}</Typography>
+          </Stack>
+          <Stack
+            direction="row"
+            spacing={1}
+            justifyContent="space-between"
+          >
+            <Typography>Driver:</Typography>
+            <Typography>
+              {`${props.callData.driverObject.rank} ${props.callData.driverObject.firstName} ${props.callData.driverObject.lastName}`}
+            </Typography>
+          </Stack>
+          <Stack
+            direction="row"
+            spacing={1}
+            justifyContent="space-between"
+          >
+            <Typography>Rider:</Typography>
+            <Typography>
+              {`${props.callData.riderObject.rank} ${props.callData.riderObject.firstName} ${props.callData.riderObject.lastName}`}
+            </Typography>
           </Stack>
         </Stack>
       </CardContent>
