@@ -22,8 +22,8 @@ function CallList(props) {
   const rows = callList.map((call) => ({
     id: call.id,
     status: call.status,
-    rider: call.riderId,
-    driver: call.driverId,
+    rider: `${call.riderObject.rank} ${call.riderObject.firstName} ${call.riderObject.lastName}`,
+    driver: `${call.driverObject.rank} ${call.driverObject.firstName} ${call.driverObject.lastName}`,
     pickup: call.pickupLocation,
     dropoff: call.dropoffLocation,
   }));
