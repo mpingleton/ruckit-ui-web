@@ -11,6 +11,18 @@ function CallList(props) {
     getCalls(getApiContext(), 0).then((data) => setCallList(data));
   }, []);
 
+  function statusString(status) {
+    if (status === 0) {
+      return "New";
+    } else if (status === 1) {
+      return "Assigned";
+    } else if (status === 2) {
+      return "In-Progress";
+    } else if (status === 3) {
+      return "Completed";
+    }
+  }
+
   const columns = [
     { field: 'status', headerName: 'Status', width: 150 },
     { field: 'rider', headerName: 'Rider', width: 200 },
@@ -21,7 +33,7 @@ function CallList(props) {
 
   const rows = callList.map((call) => ({
     id: call.id,
-    status: call.status,
+    status: statusString(call.status),
     rider: `${call.riderObject.rank} ${call.riderObject.firstName} ${call.riderObject.lastName}`,
     driver: `${call.driverObject.rank} ${call.driverObject.firstName} ${call.driverObject.lastName}`,
     pickup: call.pickupLocation,
